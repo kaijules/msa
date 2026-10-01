@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spark Music - Bài hát</title>
+
+  <!-- SEO Optimization -->
+  <meta name="description" content="Basic Table - Spark Admin Premium Bootstrap 5 Admin Dashboard Template">
+  <meta name="author" content="Spark Admin Team">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.ico">
+
+  <!-- Local Third-Party Libraries (100% Offline Compatible) -->
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-icons.css">
+  <link rel="stylesheet" href="apexcharts.css">
+  <link rel="stylesheet" href="flatpickr.min.css">
+
+  <!-- Main Design System & Custom Stylesheet -->
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <!-- ==========================================
+         START: Sidebar Component
+         Highly polished, dark-green navigation
+         ========================================== -->
+  <div class="sidebar-wrapper" id="sidebar">
+    <!-- Brand Logo / Identity -->
+    <a href="index.html" class="sidebar-brand">
+      <i class="bi bi-music-note-beamed"></i>
+      <span>Spark Music</span>
+    </a>
+
+    <!-- Navigation Menu -->
+    <div class="flex-grow-1 overflow-y-auto"><div class="sidebar-menu-section"><div class="sidebar-menu-title">Menu</div><ul class="sidebar-menu-list"><li class="sidebar-menu-item"><a href="index.html" class="sidebar-menu-link" title="Khám phá"><i class="bi bi-house-door-fill"></i><span>Khám phá</span></a></li></ul></div><div class="sidebar-menu-section"><div class="sidebar-menu-title">Thư viện</div><ul class="sidebar-menu-list"><li class="sidebar-menu-item"><a href="tables-basic.html" class="sidebar-menu-link active" title="Bài hát"><i class="bi bi-music-note-list"></i><span>Bài hát</span></a></li><li class="sidebar-menu-item"><a href="ui-forms.html" class="sidebar-menu-link" title="Tải lên & Playlist"><i class="bi bi-cloud-arrow-up-fill"></i><span>Tải lên & Playlist</span></a></li></ul></div><div class="sidebar-menu-section"><div class="sidebar-menu-title">Tài khoản</div><ul class="sidebar-menu-list"><li class="sidebar-menu-item"><a href="page-login.html" class="sidebar-menu-link" title="Đăng nhập"><i class="bi bi-box-arrow-in-right"></i><span>Đăng nhập</span></a></li></ul></div>
+    </div>
+
+    <!-- Sidebar Profile Card (Dynamic Footer) -->
+    <div class="sidebar-profile">
+      <img src="avatar.png" alt="Người nghe" class="sidebar-profile-img"
+        onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop'">
+      <div class="sidebar-profile-info">
+        <div class="sidebar-profile-name">Người nghe</div>
+        <div class="sidebar-profile-email">listener@email.com</div>
+      </div>
+    </div>
+  </div>
+  <!-- ==========================================
+         END: Sidebar Component
+         ========================================== -->
+
+
+  <!-- ==========================================
+         START: Main Content Area
+         ========================================== -->
+  <div class="main-wrapper">
+
+    <!-- START: Top Navbar Component -->
+    <header class="navbar-custom">
+      <div class="navbar-left">
+        <!-- Desktop sidebar toggle (visible on large screens only) -->
+        <button class="btn-desktop-toggle d-none d-xl-flex align-items-center justify-content-center me-3"
+          id="desktop-sidebar-toggle" aria-label="Minimize Sidebar">
+          <i class="bi bi-chevron-bar-left"></i>
+        </button>
+        <!-- Mobile sidebar toggle -->
+        <button class="sidebar-toggle-btn me-2" id="sidebar-toggle" aria-label="Toggle Navigation">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <!-- Quick Actions Dropdown -->
+        <div class="dropdown ms-2">
+          <button class="btn-quick-action dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+            id="quick-actions-dropdown">
+            <i class="bi bi-plus-lg"></i>
+            <span>Tạo mới</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-quick-action" aria-labelledby="quick-actions-dropdown">
+            <li class="dropdown-header">Lối tắt</li>
+            <li><a class="dropdown-item" href="ui-forms.html"><i class="bi bi-music-note-list"></i> Tạo playlist</a></li>
+            <li><a class="dropdown-item" href="ui-forms.html"><i class="bi bi-cloud-arrow-up"></i> Tải nhạc lên</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-person-plus"></i> Thêm nghệ sĩ</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Cài đặt</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mid navbar: search pill -->
+      <div class="navbar-search-wrapper">
+        <input type="text" class="navbar-search-input" placeholder="Tìm bài hát, nghệ sĩ..." id="main-search">
+        <button class="navbar-search-btn" aria-label="Search">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+
+      <!-- Right actions -->
+      <div class="navbar-actions">
+        <!-- Fullscreen Toggle -->
+        <button class="navbar-action-btn me-1" aria-label="Toggle Fullscreen" id="btn-fullscreen">
+          <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+        <div class="dropdown">
+          <button class="navbar-action-btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false" id="btn-notifications" data-bs-auto-close="outside">
+            <i class="bi bi-bell"></i>
+            <span class="navbar-action-badge"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-notification p-0"
+            aria-labelledby="btn-notifications">
+            <div class="notification-header">
+              <h6 class="notification-title">Thông báo</h6>
+              <button class="btn-clear-all" type="button">Đã đọc tất cả</button>
+            </div>
+            <div class="notification-list">
+              <!-- Sale Notification -->
+              <a href="#" class="notification-item">
+                <div class="notification-icon bg-success text-white">
+                  <i class="bi bi-music-note-beamed"></i>
+                </div>
+                <div class="notification-content">
+                  <p class="notification-text">Bài mới từ <strong>Lam Anh</strong></p>
+                  <span class="notification-time">2 phút trước</span>
+                </div>
+                <span class="notification-unread-dot"></span>
+              </a>
+              <!-- User Registration Notification -->
+              <a href="#" class="notification-item">
+                <div class="notification-icon bg-primary text-white">
+                  <i class="bi bi-heart-fill"></i>
+                </div>
+                <div class="notification-content">
+                  <p class="notification-text">Playlist <strong>Chill cuối tuần</strong> vừa cập nhật</p>
+                  <span class="notification-time">1 giờ trước</span>
+                </div>
+                <span class="notification-unread-dot"></span>
+              </a>
+              <!-- Low Stock Notification -->
+              <a href="#" class="notification-item">
+                <div class="notification-icon bg-warning text-dark">
+                  <i class="bi bi-disc-fill"></i>
+                </div>
+                <div class="notification-content">
+                  <p class="notification-text">Album mới: <strong>Gió Đông</strong></p>
+                  <span class="notification-time">3 giờ trước</span>
+                </div>
+              </a>
+            </div>
+            <a href="#" class="notification-footer">Xem tất cả thông báo</a>
+          </div>
+        </div>
+
+        <!-- Profile Dropdown -->
+        <div class="dropdown ms-2">
+          <button class="navbar-profile-btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false" id="profile-dropdown">
+            <img src="avatar.png" alt="Profile Image" class="navbar-profile-img">
+            <span class="navbar-profile-name d-none d-md-inline">Người nghe</span>
+            <i class="bi bi-chevron-down navbar-profile-caret"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-profile" aria-labelledby="profile-dropdown">
+            <li class="dropdown-header">Xin chào!</li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Tài khoản</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Cài đặt</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-lock"></i> Khóa màn hình</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item text-danger" href="page-login.html"><i class="bi bi-box-arrow-right"></i>
+                Đăng xuất</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- END: Top Navbar Component -->
+
+    <!-- START: Page Header Banner -->
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Bài hát</h1>
+        <p class="page-subtitle">Thư viện nhạc của bạn — bấm nút phát để nghe.</p>
+      </div>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted-green">Trang chủ</a></li>
+          <li class="breadcrumb-item text-muted-green">Thư viện</li>
+          <li class="breadcrumb-item active text-main" aria-current="page">Bài hát</li>
+        </ol>
+      </nav>
+    </div>
+    <!-- END: Page Header Banner -->
+
+    <!-- START: Basic Table Card Container -->
+    <div class="table-card-custom">
+      <!-- Header Controls -->
+      <div class="table-header-control">
+        <!-- Search bar -->
+        <div class="table-search-box">
+          <i class="bi bi-search table-search-icon"></i>
+          <input type="text" class="table-search-input" placeholder="Tìm bài hát hoặc nghệ sĩ...">
+        </div>
+        <!-- Action buttons / Filter options -->
+        <div class="table-filter-group">
+          <div class="dropdown">
+            <button class="btn-table-action dropdown-toggle" type="button" id="dropdownFilterStatus"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-funnel"></i> Thể loại
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownFilterStatus"><li><a class="dropdown-item" href="#" data-genre="">Tất cả</a></li><li><a class="dropdown-item" href="#" data-genre="Pop">Pop</a></li><li><a class="dropdown-item" href="#" data-genre="Lofi">Lofi</a></li><li><a class="dropdown-item" href="#" data-genre="EDM">EDM</a></li><li><a class="dropdown-item" href="#" data-genre="Acoustic">Acoustic</a></li><li><a class="dropdown-item" href="#" data-genre="Rock">Rock</a></li></ul>
+          </div>
+          <button class="btn-table-action" type="button" id="btn-play-all"><i class="bi bi-play-fill"></i> Phát tất cả</button>
+        </div>
+      </div>
+
+      <!-- Responsive Table Wrapper -->
+      <div class="table-responsive">
+        <table class="table-custom"><thead><tr><th>#</th><th>Bài hát</th><th>Thể loại</th><th>Lượt nghe</th><th>Trạng thái</th><th class="text-center">Thao tác</th></tr></thead><tbody id="song-tbody"></tbody></table>
+      </div>
+
+      <div class="table-footer-control"><span class="table-pagination-info" id="song-count"></span></div>
+    </div>
+    <!-- END: Basic Table Card Container -->
+
+    <!-- START: Footer Component -->
+    <footer class="footer-custom">
+      <div class="footer-left">
+        <span class="footer-logo">
+          <i class="bi bi-music-note-beamed"></i> Spark Music
+        </span>
+        <span class="footer-separator">|</span>
+        <span class="footer-copy">&copy; 2026 Làm bằng <i class="bi bi-heart-fill text-danger footer-heart"></i> by<a
+            href="https://sparkadminpro.gumroad.com/" target="_blank">Spark Admin</a>• Phân phối bởi <a
+            href="https://www.themewagon.com/" target="_blank">ThemeWagon</a> </span>
+      </div>
+      <div class="footer-right">
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">Khám phá</a></li>
+          <li><a href="#" class="footer-link">Thống kê</a></li>
+          <li><a href="#" class="footer-link">Trợ giúp</a></li>
+          <li><a href="#" class="footer-link">Trạng thái <span class="status-dot"></span></a></li>
+        </ul>
+      </div>
+    </footer>
+    <!-- END: Footer Component -->
+
+  </div>
+  <!-- ==========================================
+         END: Main Content Area
+         ========================================== -->
+
+  <!-- Local Third-Party Libraries Script dependencies -->
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="apexcharts.min.js"></script>
+  <script src="flatpickr.min.js"></script>
+
+  <!-- Local dashboard interactions controller -->
+  <script src="dashboard.js"></script>
+  <script src="music.js"></script>
+</body>
+
+</html>
